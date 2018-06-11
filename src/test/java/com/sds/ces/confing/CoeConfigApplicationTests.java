@@ -1,4 +1,4 @@
-package com.example.coeconfing;
+package com.sds.ces.confing;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

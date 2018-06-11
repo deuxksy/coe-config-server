@@ -1,14 +1,9 @@
+
 server:
-  port: 8888
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-#      defaultZone: http://localhost:8761/eureka/,http://127.0.0.1:8762/eureka
-    enabled: true
-
+  port: 7072
 spring:
+  profiles:
+    active: config1
   application:
     name: config-service
   cloud:
@@ -16,6 +11,26 @@ spring:
       server:
         git:
           uri: https://github.com/SDSACT/microservices-coe-configurations.git
-#          username:
-#          password:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.71.172.22:7071/eureka/,http://10.71.174.22:7071/eureka/
+    enabled: true
+---
 
+server:
+  port: 7072
+spring:
+  profiles: config2
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SDSACT/microservices-coe-configurations.git
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.71.174.22:7071/eureka/,http://10.71.172.22:7071/eureka/
+    enabled: true
