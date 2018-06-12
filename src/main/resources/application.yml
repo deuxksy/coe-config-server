@@ -1,11 +1,13 @@
-
 server:
   port: 7072
 spring:
   profiles:
     active: config1
-  application:
-    name: config-service
+
+--
+
+spring:
+  profiles: config1
   cloud:
     config:
       server:
@@ -16,14 +18,11 @@ eureka:
     serviceUrl:
       defaultZone: http://10.71.172.22:7071/eureka/,http://10.71.174.22:7071/eureka/
     enabled: true
+    
 ---
 
-server:
-  port: 7072
 spring:
   profiles: config2
-  application:
-    name: config-service
   cloud:
     config:
       server:

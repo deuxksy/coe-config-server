@@ -1,4 +1,4 @@
-package com.sds.ces.confing;
+package com.sds.ces.config;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
