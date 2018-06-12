@@ -1,35 +1,44 @@
 server:
-  port: 7072
+  port: ${PORT:7072}
 spring:
   profiles:
     active: config1
-
---
-
-spring:
-  profiles: config1
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/SDSACT/microservices-coe-configurations.git
+  application:
+    name: config-server
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://10.71.172.22:7071/eureka/,http://10.71.174.22:7071/eureka/
+      defaultZone: ${EUREKA_SERVER_URL:http://10.71.174.22}:${EUREKA_SERVER_PORT:7071}/eureka/
+    healthcheck:
+      enabled: true
     enabled: true
-    
 ---
-
 spring:
-  profiles: config2
+  profiles: stage-config1
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/SDSACT/microservices-coe-configurations.git
+          uri: ${CONFIG_REPOSITORY_URL:https://github.com/SDSACT/microservices-coe-configurations.git}
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://10.71.174.22:7071/eureka/,http://10.71.172.22:7071/eureka/
+      defaultZone: ${EUREKA1_SERVER_URL:http://10.71.172.22}:${EUREKA1_SERVER_PORT:7071}/eureka/,${EUREKA2_SERVER_URL:http://10.71.174.22}:${EUREKA2_SERVER_PORT:7071}/eureka/
+    healthcheck:
+      enabled: true
+    enabled: true
+---
+spring:
+  profiles: stage-config2
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${CONFIG_REPOSITORY_URL:https://github.com/SDSACT/microservices-coe-configurations.git}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  ${EUREKA1_SERVER_URL:http://10.71.174.22}:${EUREKA1_SERVER_PORT:7071}/eureka/,${EUREKA2_SERVER_URL:http://10.71.172.22}:${EUREKA2_SERVER_PORT:7071}/eureka/
+    healthcheck:
+      enabled: true
     enabled: true
