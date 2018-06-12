@@ -10,7 +10,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @EnableConfigServer
 public class CoeConfigApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CoeConfigApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CoeConfigApplication.class, args);
+    }
 }
