@@ -1,4 +1,4 @@
-# Spring Cloud Config
+# Spring Cloud Config(test)
 
 Spring Cloud Config는 분산 시스템에서 환경설정을 외부로 분리하여 관리할 수 있는 기능을 제공한다.
 
