@@ -1,4 +1,4 @@
-package com.sds.ces.config;
+package com.sds.act.coe.config;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
