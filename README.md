@@ -18,9 +18,13 @@ Config Server를 사용하여 모든 환경(개발, 테스트, 프로덕션 등)
 
 - Initial Configuration
 
+  - [Configuration git](https://github.com/SDSACT/coe-configurations)
+
+  - {serverId}-{profile}.yml 이름으로 프로퍼티 파일 업로드
+
 - Screenshot
 
-  [Externalized Configurations](./images/externalized-configurations.png)
+  ![Externalized Configurations](./images/externalized-configurations.png)
 
 ## Related Links
 
