@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: ${CONFIG_REPOSITORY_URL:https://github.com/SDSACT/coe-configurations.git}
+          uri: ${CONFIG_REPOSITORY_URL:https://github.com/deuxksy/coe-configurations.git}
 
 eureka:
   client:
